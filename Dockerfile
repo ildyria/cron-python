@@ -2,6 +2,7 @@
 FROM python:3.12-alpine
 
 RUN apk add --no-cache py3-requests
+RUN pip install requests
 
 # Copy and enable your CRON task
 COPY ./mycron /app/mycron
