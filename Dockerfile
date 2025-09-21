@@ -1,7 +1,7 @@
 
 FROM python:3.13-alpine
 
-RUN apk add --no-cache py3-requests build-base musl-dev
+RUN apk add --no-cache py3-requests build-base musl-dev linux-headers
 RUN pip install requests nudenet
 
 # Copy and enable your CRON task
