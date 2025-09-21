@@ -1,0 +1,15 @@
+services:
+  cron:
+    image: ghcr.io/ildyria/cron-python:latest
+    container_name: Cron-daily
+    hostname: cron-daily
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      # The task.py file is mandatory, it contains the code that will be executed
+      - ./task.py:/task.py
+      # You can mount a logfile to see the output of your script
+      - ./logfile:/tmp/out.log
+      # You can mount other folders that your task.py needs to access
+      - /what/ever/other/folder/needed/for/task:/medias
+
