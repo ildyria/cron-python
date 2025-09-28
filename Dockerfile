@@ -1,13 +1,9 @@
 
 FROM tensorflow/tensorflow:latest
 
-
 #Install Cron
 RUN apt-get update
 RUN pip install --break-system-packages requests nudenet>=3.4.2
-# RUN apk add --no-cache py3-requests build-base musl-dev linux-headers
-# RUN pip install requests nudenet>=3.4.2
-# RUN pip install tensorflow>=2.14.0
 # Copy and enable your CRON task
 # Add crontab file in the cron directory
 ADD ./mycron /etc/cron.d/hello-cron
