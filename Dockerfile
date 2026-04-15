@@ -5,7 +5,7 @@ FROM tensorflow/tensorflow:latest
 RUN apt-get update && \
     apt-get install -y cron && \
     rm -fr /var/lib/apt/lists/* && \
-    pip install --break-system-packages requests nudenet>=3.4.2
+    pip install --break-system-packages requests pillow nudenet>=3.4.2
 
 # Copy and enable your CRON task
 # Add crontab file in the cron directory
